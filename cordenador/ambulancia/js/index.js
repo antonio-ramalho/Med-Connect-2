@@ -1,6 +1,6 @@
-function chamarIndex() {
+function chamarIndex_ambulancias() {
   inserirBotao();
-  carregarLista();
+  carregarLista_ambu();
 
   document.getElementById("novo").addEventListener("click", () => {
     window.location.href = "ambulancia/home/novo.html";
@@ -13,7 +13,7 @@ function inserirBotao() {
   document.getElementById("titulo").innerHTML += botao;
 }
 
-async function excluir(id) {
+async function excluir_ambu(id) {
   const retorno = await fetch("ambulancia/php/excluir.php?id=" + id);
   const resposta = await retorno.json();
 
@@ -25,7 +25,7 @@ async function excluir(id) {
   }
 }
 
-async function carregarLista() {
+async function carregarLista_ambu() {
   const retorno = await fetch("ambulancia/php/get.php");
   const resposta = await retorno.json();
 
@@ -34,9 +34,8 @@ async function carregarLista() {
                 <thead>
                 <tr>
                 <th></th>
-                <th> Nome </th>
-                <th> Usuario </th>
-                <th> Senha </th>
+                <th> Número da ambulância </th>
+                <th> Número da placa da ambulância </th>
                 <th></th>
                 </tr>
                 </thead>
@@ -47,11 +46,10 @@ async function carregarLista() {
 
       html += ` <tr>
                 <td>
-                  <a href="#" onclick='excluir(${objeto.id})' class='botao-excluir'></a>
+                  <a href="#" onclick='excluir_ambu(${objeto.id})' class='botao-excluir'></a>
                 </td>
-                <td> ${objeto.nome} </td>
-                <td> ${objeto.usuario}  </td>
-                <td> ${objeto.senha}  </td>
+                <td> ${objeto.num_ambulancia} </td>
+                <td> ${objeto.placa_ambu} </td>
                 <td> 
                   <a href='ambulancia/home/alterar.html?id=${objeto.id}' class='botao-editar'></a>
                 </td>
@@ -62,7 +60,7 @@ async function carregarLista() {
     html += `</tbody>
              </table>`;
 
-    document.getElementById("lista").innerHTML = html;
+    document.getElementById("lista_ambu").innerHTML = html;
   } else {
     alert("Erro!" + resposta.mensagem);
   }

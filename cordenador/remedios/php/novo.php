@@ -9,13 +9,15 @@ $retorno = [
 ];
 
 // Atribuição
-$nome       = $_POST['nome'];
-$usuario    = $_POST['usuario'];
-$senha      = $_POST['senha'];
+$nome_medicamento = $_POST['nome_medicamento'];
+$unidade_medida   = $_POST['unidade'];
+$dosagem_padrao   = $_POST['dosagem'];
+$num_anvisa       = $_POST['num_anvisa'];
+$validade_medicamento = $_POST['validade'];
 
 // Preparar a query via statement para enviar ao banco
-$stmt = $conexao->prepare("INSERT INTO funcionarios(nome,usuario,senha) VALUES(?,?,?)");
-$stmt->bind_param("sss",$nome,$usuario,$senha);
+$stmt = $conexao->prepare("INSERT INTO medicamentos(nome_medicamento,unidade_medida,dosagem_padrao,num_anvisa,validade_medicamento) VALUES(?,?,?,?,?)");
+$stmt->bind_param("sssss",$nome_medicamento,$unidade_medida,$dosagem_padrao,$num_anvisa,$validade_medicamento);
 $stmt->execute();
 
 if($stmt -> affected_rows > 0) {

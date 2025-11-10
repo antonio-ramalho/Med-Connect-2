@@ -13,18 +13,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-async function fase1(id) {
-  const retorno = await fetch("../php/get.php?id=" + id);
+async function fase1(id_medicamento) {
+  const retorno = await fetch("../php/get.php?id=" + id_medicamento);
   const resposta = await retorno.json();
 
   if (resposta.status == "ok") {
     alert("Sucesso " + resposta.mensagem);
     const reg = resposta.data[0];
 
-    document.getElementById("nome").value = reg.nome;
-    document.getElementById("usuario").value = reg.usuario;
-    document.getElementById("senha").value = reg.senha;
-    document.getElementById("id").value = id;
+    document.getElementById("nome_medicamento").value = reg.nome_medicamento;
+    document.getElementById("unidade").value = reg.unidade_medida;
+    document.getElementById("dosagem").value = reg.dosagem_padrao;
+    document.getElementById("num_anvisa").value = reg.num_anvisa;
+    document.getElementById("validade").value = reg.validade_medicamento;
+    document.getElementById("id_medicamento").value = id_medicamento;
   } else {
     alert("Erro " + resposta.mensagem);
   }
@@ -35,19 +37,29 @@ document.getElementById("enviar").addEventListener("click", function () {
 });
 
 async function fase2() {
-  var nome = document.getElementById("nome").value;
-  var usuario = document.getElementById("usuario").value;
-  var senha = document.getElementById("senha").value;
-  var id = document.getElementById("id").value;
+  var nome_medicamento = document.getElementById("nome_medicamento").value;
+  var unidade = document.getElementById("unidade").value;
+  var dosagem = document.getElementById("dosagem").value;
+  var num_anvisa = document.getElementById("num_anvisa").value;
+  var validade = document.getElementById("validade").value;
+  var id_medicamento = document.getElementById("id_medicamento").value;
 
-  if (nome.length > 0 && usuario.length > 0 && senha.length > 0) {
+  if (
+    nome_medicamento.length > 0 &&
+    unidade.length > 0 &&
+    dosagem.length > 0 &&
+    num_anvisa.length > 0 &&
+    validade.length > 0
+  ) {
     const fd = new FormData();
 
-    fd.append("nome", nome);
-    fd.append("usuario", usuario);
-    fd.append("senha", senha);
+    fd.append("nome_medicamento", nome_medicamento);
+    fd.append("unidade_medida", unidade);
+    fd.append("dosagem_padrao", dosagem);
+    fd.append("num_anvisa", num_anvisa);
+    fd.append("validade_medicamento", validade);
 
-    const retorno = await fetch("../php/alterar.php?id=" + id, {
+    const retorno = await fetch("../php/alterar.php?id=" + id_medicamento, {
       method: "POST",
       body: fd,
     });

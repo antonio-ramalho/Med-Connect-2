@@ -31,13 +31,13 @@ function carregarPagina(url) {
       conteudoPrincipal.innerHTML = html;
 
       if (url === "funcionarios/home/index.html") {
-        chamarIndex();
+        chamarIndex_funcionarios();
       } else if (url === "ambulancia/home/index.html") {
-        chamarIndex();
+        chamarIndex_ambulancias();
       } else if (url === "exames/home/index.html") {
-        chamarIndex();
+        chamarIndex_exames();
       } else if (url === "remedios/home/index.html") {
-        chamarIndex();
+        chamarIndex_medicamentos();
       }
     })
     .catch((error) => {

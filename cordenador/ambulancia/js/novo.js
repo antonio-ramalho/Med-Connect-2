@@ -9,21 +9,20 @@ document.getElementById("enviar").addEventListener("click", function () {
 });
 
 async function novo() {
-  var nome = document.getElementById("nome").value;
-  var usuario = document.getElementById("usuario").value;
-  var senha = document.getElementById("senha").value;
+  var num_ambu = document.getElementById("num_ambu").value;
+  var num_placa = document.getElementById("num_placa").value;
 
-  if (nome.length > 0 && usuario.length > 0 && senha.length > 0) {
+  if (num_ambu.length > 0 && num_placa.length > 0) {
     const fd = new FormData();
 
-    fd.append("nome", nome);
-    fd.append("usuario", usuario);
-    fd.append("senha", senha);
+    fd.append("num_ambu", num_ambu);
+    fd.append("num_placa", num_placa);
 
     const retorno = await fetch("../php/novo.php", {
       method: "POST",
       body: fd,
     });
+
     const resposta = await retorno.json();
 
     if (resposta.status == "ok") {

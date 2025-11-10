@@ -1,20 +1,21 @@
-function chamarIndex_funcionarios() {
+function chamarIndex() {
   inserirBotao();
-  chamarIndex_func();
+  valida_sessao();
+  carregarLista();
 
   document.getElementById("novo").addEventListener("click", () => {
-    window.location.href = "funcionarios/home/novo.html";
+    window.location.href = "pacientes/home/novo.html";
   });
 }
 
 function inserirBotao() {
   var botao = "";
-  botao = "<button id='novo' class='botao-cadastro mb-4'> Novo registro </button>";
+  botao = "<button id='novo' class='botao-cadastro mb-4'>Cadastrar</button>";
   document.getElementById("titulo").innerHTML += botao;
 }
 
-async function excluir_func(id) {
-  const retorno = await fetch("funcionarios/php/excluir.php?id=" + id);
+async function excluir(id) {
+  const retorno = await fetch("pacientes/php/excluir.php?id=" + id);
   const resposta = await retorno.json();
 
   if (resposta.status == "ok") {
@@ -25,8 +26,8 @@ async function excluir_func(id) {
   }
 }
 
-async function chamarIndex_func() {
-  const retorno = await fetch("funcionarios/php/get.php");
+async function carregarLista() {
+  const retorno = await fetch("pacientes/php/get.php");
   const resposta = await retorno.json();
 
   if (resposta.status == "ok") {
@@ -47,13 +48,13 @@ async function chamarIndex_func() {
 
       html += ` <tr>
                 <td>
-                  <a href="#" onclick='excluir_func(${objeto.id})' class='botao-excluir'></a>
+                  <a href="#" onclick='excluir(${objeto.id})' class='botao-excluir'></a>
                 </td>
                 <td> ${objeto.nome} </td>
                 <td> ${objeto.usuario}  </td>
                 <td> ${objeto.senha}  </td>
                 <td> 
-                  <a href='funcionarios/home/alterar.html?id=${objeto.id}' class='botao-editar'></a>
+                    <a href='pacientes/home/alterar.html?id=${objeto.id}' class='botao-editar'></a>
                 </td>
                 </tr>
                 `;
@@ -62,7 +63,7 @@ async function chamarIndex_func() {
     html += `</tbody>
              </table>`;
 
-    document.getElementById("lista_func").innerHTML = html;
+    document.getElementById("lista").innerHTML = html;
   } else {
     alert("Erro!" + resposta.mensagem);
   }

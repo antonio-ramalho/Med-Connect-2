@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("sair").addEventListener("click", () => {
-    window.location.href = "../../cordenador.html";
+    window.location.href = "../../recepcionista.html";
   });
 });
 
@@ -9,25 +9,26 @@ document.getElementById("enviar").addEventListener("click", function () {
 });
 
 async function novo() {
-  var exame = document.getElementById("exame").value;
-  var tipo_exam = document.getElementById("tipo_exam").value;
+  var nome = document.getElementById("nome").value;
+  var usuario = document.getElementById("usuario").value;
+  var senha = document.getElementById("senha").value;
 
-  if (exame.length > 0 && tipo_exam.length > 0) {
+  if (nome.length > 0 && usuario.length > 0 && senha.length > 0) {
     const fd = new FormData();
 
-    fd.append("exame", exame);
-    fd.append("tipo_exam", tipo_exam);
+    fd.append("nome", nome);
+    fd.append("usuario", usuario);
+    fd.append("senha", senha);
 
     const retorno = await fetch("../php/novo.php", {
       method: "POST",
       body: fd,
     });
-
     const resposta = await retorno.json();
 
     if (resposta.status == "ok") {
       alert("Sucesso " + resposta.mensagem);
-      window.location.href = "../../cordenador.html";
+      window.location.href = "../../recepcionista.html";
     } else {
       alert("Erro " + resposta.mensagem);
     }

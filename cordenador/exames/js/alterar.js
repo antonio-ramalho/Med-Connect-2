@@ -21,9 +21,8 @@ async function fase1(id) {
     alert("Sucesso " + resposta.mensagem);
     const reg = resposta.data[0];
 
-    document.getElementById("nome").value = reg.nome;
-    document.getElementById("usuario").value = reg.usuario;
-    document.getElementById("senha").value = reg.senha;
+    document.getElementById("exame").value = reg.nome_exam;
+    document.getElementById("tipo_exam").value = reg.tipo_exam;
     document.getElementById("id").value = id;
   } else {
     alert("Erro " + resposta.mensagem);
@@ -35,22 +34,21 @@ document.getElementById("enviar").addEventListener("click", function () {
 });
 
 async function fase2() {
-  var nome = document.getElementById("nome").value;
-  var usuario = document.getElementById("usuario").value;
-  var senha = document.getElementById("senha").value;
+  var nome_exam = document.getElementById("exame").value;
+  var tipo_exam = document.getElementById("tipo_exam").value;
   var id = document.getElementById("id").value;
 
-  if (nome.length > 0 && usuario.length > 0 && senha.length > 0) {
+  if (nome_exam.length > 0 && tipo_exam.length > 0) {
     const fd = new FormData();
 
-    fd.append("nome", nome);
-    fd.append("usuario", usuario);
-    fd.append("senha", senha);
+    fd.append("nome_exam", nome_exam);
+    fd.append("tipo_exam", tipo_exam);
 
     const retorno = await fetch("../php/alterar.php?id=" + id, {
       method: "POST",
       body: fd,
     });
+
     const resposta = await retorno.json();
 
     if (resposta.status == "ok") {

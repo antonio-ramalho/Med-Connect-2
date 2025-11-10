@@ -4,7 +4,7 @@ include_once("../../../conexao.php");
 // prepara a query para ser executada
 if(isset($_GET['id'])){
     $id = $_GET['id'];
-    $stmt = $conexao->prepare("DELETE FROM funcionarios WHERE id = ?");
+    $stmt = $conexao->prepare("DELETE FROM ambulancia WHERE id = ?");
     $stmt->bind_param("i",$id);
     $stmt->execute();
 

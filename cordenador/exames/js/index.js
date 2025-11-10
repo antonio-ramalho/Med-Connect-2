@@ -1,6 +1,6 @@
-function chamarIndex() {
+function chamarIndex_exames() {
   inserirBotao();
-  carregarLista();
+  carregarLista_exam();
 
   document.getElementById("novo").addEventListener("click", () => {
     window.location.href = "exames/home/novo.html";
@@ -13,7 +13,7 @@ function inserirBotao() {
   document.getElementById("titulo").innerHTML += botao;
 }
 
-async function excluir(id) {
+async function excluir_exam(id) {
   const retorno = await fetch("exames/php/excluir.php?id=" + id);
   const resposta = await retorno.json();
 
@@ -25,7 +25,7 @@ async function excluir(id) {
   }
 }
 
-async function carregarLista() {
+async function carregarLista_exam() {
   const retorno = await fetch("exames/php/get.php");
   const resposta = await retorno.json();
 
@@ -34,9 +34,8 @@ async function carregarLista() {
                 <thead>
                 <tr>
                 <th></th>
-                <th> Nome </th>
-                <th> Usuario </th>
-                <th> Senha </th>
+                <th> Exame </th>
+                <th> Tipo de exame </th>
                 <th></th>
                 </tr>
                 </thead>
@@ -47,11 +46,10 @@ async function carregarLista() {
 
       html += ` <tr>
                 <td>
-                  <a href="#" onclick='excluir(${objeto.id})' class='botao-excluir'></a>
+                  <a href="#" onclick='excluir_exam(${objeto.id})' class='botao-excluir'></a>
                 </td>
-                <td> ${objeto.nome} </td>
-                <td> ${objeto.usuario}  </td>
-                <td> ${objeto.senha}  </td>
+                <td> ${objeto.nome_exam} </td>
+                <td> ${objeto.tipo_exam}  </td>
                 <td> 
                   <a href='exames/home/alterar.html?id=${objeto.id}' class='botao-editar'></a>
                 </td>
@@ -62,7 +60,7 @@ async function carregarLista() {
     html += `</tbody>
              </table>`;
 
-    document.getElementById("lista").innerHTML = html;
+    document.getElementById("lista_exam").innerHTML = html;
   } else {
     alert("Erro!" + resposta.mensagem);
   }

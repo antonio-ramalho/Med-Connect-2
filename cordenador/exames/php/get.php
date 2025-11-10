@@ -4,10 +4,10 @@ include_once("../../../conexao.php");
 // prepara a query para ser executada
 if(isset($_GET['id'])){
     $id = $_GET['id'];
-    $stmt = $conexao->prepare("SELECT * FROM funcionarios WHERE id = ?");
+    $stmt = $conexao->prepare("SELECT * FROM exames WHERE id = ?");
     $stmt->bind_param("i",$id);
 }else{
-    $stmt = $conexao->prepare("SELECT * FROM funcionarios");
+    $stmt = $conexao->prepare("SELECT * FROM exames");
 }
 $stmt->execute();
 // pega o resultado da query executada e armazena na variável $resultado

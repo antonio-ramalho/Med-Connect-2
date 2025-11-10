@@ -9,13 +9,12 @@ $retorno = [
 ];
 
 // Atribuição
-$nome       = $_POST['nome'];
-$usuario    = $_POST['usuario'];
-$senha      = $_POST['senha'];
+$num_ambu       = $_POST['num_ambu'];
+$num_placa      = $_POST['num_placa'];
 
 // Preparar a query via statement para enviar ao banco
-$stmt = $conexao->prepare("INSERT INTO funcionarios(nome,usuario,senha) VALUES(?,?,?)");
-$stmt->bind_param("sss",$nome,$usuario,$senha);
+$stmt = $conexao->prepare("INSERT INTO ambulancia(num_ambulancia, placa_ambu) VALUES(?,?)");
+$stmt->bind_param("ss",$num_ambu,$num_placa);
 $stmt->execute();
 
 if($stmt -> affected_rows > 0) {

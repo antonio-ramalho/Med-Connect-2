@@ -10,22 +10,29 @@
       <h1>Novo registro</h1>
       <form action="">
         <div>
-          <label for="nome">*Nome:</label>
-          <input type="text" id="nome" name="nome" />
+          <label for="nome_medicamento">*Nome:</label>
+          <input type="text" placeholder="paracetamol" id="nome_medicamento" name="nome_medicamento" />
         </div>
         <div>
-          <label for="usuario">*Usuário:</label>
-          <input type="text" id="usuario" name="usuario" />
+          <label for="unidade">*Unidade de Medida:</label>
+          <input type="text" placeholder="mg" id="unidade" name="unidade" />
         </div>
         <div>
-          <label for="senha">*senha:</label>
-          <input type="text" id="senha" name="senha" />
+          <label for="dosagem">*Dosagem Padrão:</label>
+          <input type="text" id="dosagem" name="dosagem" />
+        </div>
+        <div>
+          <label for="num_anvisa">*Número da Anvisa:</label>
+          <input type="text" id="num_anvisa" name="num_anvisa" />
+        </div>
+        <div>
+          <label for="validade">*Data de Validade:</label>
+          <input type="date" id="validade" name="validade" />
         </div>
       </form>
       <button id="enviar" type="button">Enviar</button>
       <button id="sair" type="button">Sair</button>
     </div>
-    <script src="../js/valida_sessao.js"></script>
     <script src="../js/novo.js"></script>
   </body>
 </html>

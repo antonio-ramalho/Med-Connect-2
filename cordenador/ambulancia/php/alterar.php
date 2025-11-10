@@ -10,14 +10,13 @@ $retorno = [
 
 if(isset($_GET['id'])) {
     // Atribuição
-    $nome       = $_POST['nome'];
-    $usuario    = $_POST['usuario'];
-    $senha      = $_POST['senha'];
-    $id         = $_GET['id'];
+    $num_ambu       = $_POST['num_ambu'];
+    $num_placa      = $_POST['num_placa'];
+    $id             = $_GET['id'];
 
     // Preparar a query via statement para enviar ao banco
-    $stmt = $conexao->prepare("UPDATE funcionarios SET nome = ?, usuario = ?, senha = ? WHERE id = ?");
-    $stmt->bind_param("sssi",$nome,$usuario,$senha,$id);
+    $stmt = $conexao->prepare("UPDATE ambulancia SET num_ambulancia = ?, placa_ambu = ? WHERE id = ?");
+    $stmt->bind_param("ssi",$num_ambu,$num_placa,$id);
     $stmt->execute();
 
     if($stmt-> affected_rows > 0){
