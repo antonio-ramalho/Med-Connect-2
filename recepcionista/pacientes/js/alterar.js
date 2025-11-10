@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   var id = url.get("id");
 
   document.getElementById("sair").addEventListener("click", () => {
-    window.location.href = "../../cordenador.html";
+    window.location.href = "../../recepcionista.html";
   });
 
   if (id) {
@@ -55,7 +55,7 @@ async function fase2() {
 
     if (resposta.status == "ok") {
       alert("Sucesso, " + resposta.mensagem);
-      window.location.href = "../../cordenador.html";
+      window.location.href = "../../recepcionista.html";
     } else {
       alert("Erro, " + resposta.mensagem);
     }

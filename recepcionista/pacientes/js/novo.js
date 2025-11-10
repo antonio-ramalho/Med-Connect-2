@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("sair").addEventListener("click", () => {
-    window.location.href = "../../cordenador.html";
+    window.location.href = "../../recepcionista.html";
   });
 });
 
@@ -28,7 +28,7 @@ async function novo() {
 
     if (resposta.status == "ok") {
       alert("Sucesso " + resposta.mensagem);
-      window.location.href = "../../cordenador.html";
+      window.location.href = "../../recepcionista.html";
     } else {
       alert("Erro " + resposta.mensagem);
     }

@@ -26,7 +26,7 @@ async function verificarLogin() {
     if (resposta.data == "CORD") {
       window.location.href = "../cordenador/cordenador.html";
     } else if (resposta.data == "RECE") {
-      window.location.href = "../recepcionista/cordenador.html";
+      window.location.href = "../recepcionista/recepcionista.html";
     } else {
       alert("cargo não existe!");
     }

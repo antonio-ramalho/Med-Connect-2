@@ -1,30 +1,16 @@
 function chamarIndex() {
   inserirBotao();
-  validaSessao();
+  valida_sessao();
   carregarLista();
 
   document.getElementById("novo").addEventListener("click", () => {
     window.location.href = "pacientes/home/novo.html";
   });
-
-  document.getElementById("sair").addEventListener("click", () => {
-    logOff();
-  });
-}
-
-async function logOff() {
-  const retorno = await fetch("pacientes/php/logoff.php");
-  const resposta = await retorno.json();
-
-  if (resposta.status == "ok") {
-    alert("volte sempre");
-    window.location.href = "../login/index.html";
-  }
 }
 
 function inserirBotao() {
   var botao = "";
-  botao = "<button id='novo'> Novo registro </button><button id='sair'> Sair </button>";
+  botao = "<button id='novo' class='botao-cadastro mb-4'> Novo registro </button>";
   document.getElementById("titulo").innerHTML += botao;
 }
 
