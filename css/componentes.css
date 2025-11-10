@@ -9,18 +9,16 @@
   color: white;
 }
 
-.botoes-cadastro-excluir {
-  display: flex;
-  gap: 2.5em;
-}
-
 .botao-excluir {
-  background-color: var(--fundo-botao-vermelho);
+  background-image: url(../svg/trash.svg);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 20px 20px;
+  padding-left: 40px !important;
+  height: 20px;
   border: none;
-  height: 45px;
-  border-radius: 20px;
-  width: 200px;
-  color: white;
+  background-color: transparent;
+  display: block;
 }
 
 .botao-editar {
@@ -46,12 +44,6 @@
 
 .barra-pesquisa::placeholder {
   color: white;
-}
-
-.input-checkbox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* estilo da caixa de aviso*/

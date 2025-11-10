@@ -10,7 +10,7 @@ function chamarIndex() {
 
 function inserirBotao() {
   var botao = "";
-  botao = "<button id='novo' class='botao-cadastro mb-4'> Novo registro </button>";
+  botao = "<button id='novo' class='botao-cadastro mb-4'>Cadastrar</button>";
   document.getElementById("titulo").innerHTML += botao;
 }
 
@@ -34,10 +34,11 @@ async function carregarLista() {
     var html = `<table>
                 <thead>
                 <tr>
+                <th></th>
                 <th> Nome </th>
                 <th> Usuario </th>
                 <th> Senha </th>
-                <th> # </th>
+                <th></th>
                 </tr>
                 </thead>
                 <tbody>`;
@@ -46,12 +47,14 @@ async function carregarLista() {
       var objeto = resposta.data[i];
 
       html += ` <tr>
+                <td>
+                  <a href="#" onclick='excluir(${objeto.id})' class='botao-excluir'></a>
+                </td>
                 <td> ${objeto.nome} </td>
                 <td> ${objeto.usuario}  </td>
                 <td> ${objeto.senha}  </td>
                 <td> 
-                    <a href="pacientes/home/alterar.html?id=${objeto.id}"> Alterar</a>"
-                    <a href="#" onclick='excluir(${objeto.id})'> Excluir</a>"
+                    <a href='pacientes/home/alterar.html?id=${objeto.id}' class='botao-editar'></a>
                 </td>
                 </tr>
                 `;
