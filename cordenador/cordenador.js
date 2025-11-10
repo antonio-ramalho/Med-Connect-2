@@ -14,16 +14,6 @@ function gerenciarEstadoAtivo(linkAtivo) {
   if (linkAtivo) linkAtivo.classList.add("ativo");
 }
 
-async function logOff() {
-  const retorno = await fetch("logoff.php");
-  const resposta = await retorno.json();
-
-  if (resposta.status == "ok") {
-    alert("volte sempre");
-    window.location.href = "../login/index.html";
-  }
-}
-
 function mostraNomeUsuario() {
   const nomeUsuario = localStorage.getItem("nomeUsuario");
   if (nomeUsuario) {
