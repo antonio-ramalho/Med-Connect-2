@@ -8,16 +8,27 @@ $retorno = [
     "data"     => []
 ];
 
-if(isset($_GET['id'])) {
+if(isset($_GET['id_paciente'])) {
     // Atribuição
     $nome       = $_POST['nome'];
-    $usuario    = $_POST['usuario'];
-    $senha      = $_POST['senha'];
-    $id         = $_GET['id'];
+    $cpf    = $_POST['cpf'];
+    $telefone      = $_POST['telefone'];
+    $data_nasc      = $_POST['data_nasc'];
+    $idade      = $_POST['idade'];
+    $sexo      = $_POST['sexo'];
+    $email      = $_POST['email'];
+    $logradouro      = $_POST['logradouro'];
+    $numero_ende      = $_POST['numero_ende'];
+    $cep      = $_POST['cep'];
+    $cidade      = $_POST['cidade'];
+    $estado      = $_POST['estado'];
+    $complemento      = $_POST['complemento'];
+    $bairo      = $_POST['bairro'];
+    $id_paciente         = $_GET['id_paciente'];
 
     // Preparar a query via statement para enviar ao banco
-    $stmt = $conexao->prepare("UPDATE funcionarios SET nome = ?, usuario = ?, senha = ? WHERE id = ?");
-    $stmt->bind_param("sssi",$nome,$usuario,$senha,$id);
+    $stmt = $conexao->prepare("UPDATE pacientes SET nome = ?, cpf = ?, telefone = ?, data_nasc = ?, idade = ?, sexo = ?, email = ?, logradouro = ?, numero_ende = ?, cep = ?, cidade = ?, estado = ?, complemento = ?, bairro = ? WHERE id_paciente = ?");
+    $stmt->bind_param("ssssisssissssi",$nome,$cpf,$telefone,$data_nasc,$idade,$sexo,$email,$logradouro,$numero_ende,$cidade,$estado,$complemento,$bairo,$id_paciente);
     $stmt->execute();
 
     if($stmt-> affected_rows > 0){
