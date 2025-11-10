@@ -1,0 +1,38 @@
+/* estilo da tabela*/
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--azul-escuro);
+  color: white;
+  border-radius: 20px;
+}
+
+thead tr th {
+  background-color: var(--azul-escuro);
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+  border-radius: 20px;
+}
+
+tbody td {
+  padding: 10px;
+}
+
+table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 20px;
+}
+
+table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 20px;
+}
+
+table tbody tr {
+  background-color: var(--fundo-lista);
+}
+
+.item-para-excluir {
+  cursor: pointer;
+  transform: scale(1.2);
+}

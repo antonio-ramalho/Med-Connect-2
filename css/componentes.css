@@ -1,0 +1,81 @@
+/* componentes botoes*/
+
+.botao-cadastro {
+  background-color: var(--fundo-botao-verde);
+  border: none;
+  height: 45px;
+  border-radius: 20px;
+  width: 200px;
+  color: white;
+}
+
+.botoes-cadastro-excluir {
+  display: flex;
+  gap: 2.5em;
+}
+
+.botao-excluir {
+  background-color: var(--fundo-botao-vermelho);
+  border: none;
+  height: 45px;
+  border-radius: 20px;
+  width: 200px;
+  color: white;
+}
+
+.botao-editar {
+  background-image: url(../svg/pencil-square.svg);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 20px 20px;
+  padding-left: 40px !important;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  display: block;
+}
+
+/* componentes barra de pesquisa e checkbox de excluir*/
+
+.barra-pesquisa {
+  background-color: var(--azul-claro-50);
+  border: none;
+  border-radius: 20px;
+  height: 45px;
+}
+
+.barra-pesquisa::placeholder {
+  color: white;
+}
+
+.input-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* estilo da caixa de aviso*/
+
+.toast-aviso {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  min-width: 280px;
+  background-color: #d9534f;
+  color: #fff;
+  text-align: left;
+  border-radius: 5px;
+  padding: 16px;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: visibility 0.5s, opacity 0.5s, transform 0.5s;
+  transform: translateX(100%);
+}
+
+.toast-aviso.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+}

@@ -16,7 +16,8 @@ $tabela = [];
 $retorno = [
     "status"   => "",
     "mensagem" => "",
-    "data"     => []
+    "data"     => [],
+    "nome"     => []
 ];
 
 if($resultado->num_rows > 0){
@@ -29,7 +30,8 @@ if($resultado->num_rows > 0){
     $retorno = [
     "status"   => "ok",
     "mensagem" => "Registro carregados com sucesso!",
-    "data"     => $dadosUsuario['cargo']
+    "data"     => $dadosUsuario['cargo'],
+    "nome"     => $dadosUsuario['nome']
     ];
 
     // encontrou senha e usuario
@@ -41,7 +43,8 @@ if($resultado->num_rows > 0){
     $retorno = [
     "status"   => "erro",
     "mensagem" => "não encontrou registros",
-    "data"     => []
+    "data"     => [],
+    "nome"     => []
     ];
 }
 

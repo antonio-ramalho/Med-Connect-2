@@ -1,37 +1,81 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const conteudoPrincipal = document.getElementById("conteudo-principal");
-  const links = document.querySelectorAll(".sidebar a");
+  valida_sessao();
+  mostraNomeUsuario();
+  carregarPagina("funcionarios/home/index.html");
+  selecionarPagina();
 
-  function carregarPagina(url) {
-    fetch(url)
-      .then((response) => response.text())
-      .then((html) => {
-        conteudoPrincipal.innerHTML = html;
+  document.getElementById("sair").addEventListener("click", () => {
+    logOff();
+  });
+});
 
-        if (url === "funcionarios/home/index.html") {
-          chamarIndex();
-        } else if (url === "ambulancia/home/index.html") {
-          chamarIndex();
-        } else if (url === "exames/home/index.html") {
-          chamarIndex();
-        } else if (url === "remedios/home/index.html") {
-          chamarIndex();
-        }
-      })
-      .catch((error) => {
-        console.error("Erro ao carregar a página:", error);
-        conteudoPrincipal.innerHTML = "<p>Erro ao carregar o conteúdo.</p>";
-      });
+function gerenciarEstadoAtivo(linkAtivo) {
+  links.forEach((link) => link.classList.remove("ativo"));
+  if (linkAtivo) linkAtivo.classList.add("ativo");
+}
+
+async function logOff() {
+  const retorno = await fetch("logoff.php");
+  const resposta = await retorno.json();
+
+  if (resposta.status == "ok") {
+    alert("volte sempre");
+    window.location.href = "../login/index.html";
   }
+}
 
+function mostraNomeUsuario() {
+  const nomeUsuario = localStorage.getItem("nomeUsuario");
+  if (nomeUsuario) {
+    document.getElementById("nome-usuario").textContent = nomeUsuario;
+  }
+}
+
+const conteudoPrincipal = document.getElementById("conteudo-principal");
+const links = document.querySelectorAll(".sidebar a");
+
+function carregarPagina(url) {
+  fetch(url)
+    .then((response) => response.text())
+    .then((html) => {
+      conteudoPrincipal.innerHTML = html;
+
+      if (url === "funcionarios/home/index.html") {
+        chamarIndex();
+      } else if (url === "ambulancia/home/index.html") {
+        chamarIndex();
+      } else if (url === "exames/home/index.html") {
+        chamarIndex();
+      } else if (url === "remedios/home/index.html") {
+        chamarIndex();
+      }
+    })
+    .catch((error) => {
+      console.error("Erro ao carregar a página:", error);
+      conteudoPrincipal.innerHTML = "<p>Erro ao carregar o conteúdo.</p>";
+    });
+}
+
+function selecionarPagina() {
   links.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
 
+      gerenciarEstadoAtivo(link);
       const page = link.getAttribute("data-page");
       carregarPagina(page);
+
+      const linkAtivoInicial = document.querySelector(".sidebar a.ativo");
+      if (linkAtivoInicial) {
+        carregarPagina(linkAtivoInicial.getAttribute("data-page"));
+      } else {
+        // Garante que a primeira página seja carregada (ajuste se a página inicial for outra)
+        const dashboardLink = document.querySelector('.sidebar a[data-page*="funcionarios/home/index.html.html"]');
+        if (dashboardLink) {
+          dashboardLink.classList.add("ativo");
+          carregarPagina(dashboardLink.getAttribute("data-page"));
+        }
+      }
     });
   });
-
-  carregarPagina("funcionarios/home/index.html");
-});
+}

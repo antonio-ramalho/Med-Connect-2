@@ -20,6 +20,7 @@ async function verificarLogin() {
   console.log(resposta);
 
   if (resposta.status == "ok") {
+    localStorage.setItem("nomeUsuario", resposta.nome);
     alert("seja bem vindo");
 
     if (resposta.data == "CORD") {

@@ -1,0 +1,8 @@
+/* estilo do header */
+
+header {
+  background-color: var(--azul-escuro);
+  height: 100px;
+  color: white;
+  width: 100%;
+}
