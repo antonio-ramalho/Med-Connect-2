@@ -8,16 +8,18 @@ $retorno = [
     "data"     => []
 ];
 
-if(isset($_GET['id'])) {
+if(isset($_GET['id_medicamento'])) {
     // Atribuição
-    $nome       = $_POST['nome'];
-    $usuario    = $_POST['usuario'];
-    $senha      = $_POST['senha'];
-    $id         = $_GET['id'];
+    $nome_medicamento = $_POST['nome_medicamento'];
+    $unidade_medida = $_POST['unidade_medida'];
+    $dosagem_padrao = $_POST['dosagem_padrao'];
+    $num_anvisa = $_POST['num_anvisa'];
+    $validade_medicamento = $_POST['validade_medicamento'];
+    $id_medicamento = $_GET['id_medicamento'];
 
     // Preparar a query via statement para enviar ao banco
-    $stmt = $conexao->prepare("UPDATE funcionarios SET nome = ?, usuario = ?, senha = ? WHERE id = ?");
-    $stmt->bind_param("sssi",$nome,$usuario,$senha,$id);
+    $stmt = $conexao->prepare("UPDATE medicamentos SET nome_medicamento = ?, unidade_medida = ?, dosagem_padrao = ?, num_anvisa = ?,validade_medicamento  WHERE id_medicamento = ?");
+    $stmt->bind_param("sssssi",$nome_medicamento,$unidade_medida,$dosagem_padrao,$num_anvisa, $validade_medicamento, $id_medicamento);
     $stmt->execute();
 
     if($stmt-> affected_rows > 0){

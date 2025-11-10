@@ -34,8 +34,10 @@ async function carregarLista() {
                 <thead>
                 <tr>
                 <th> Nome </th>
-                <th> Usuario </th>
-                <th> Senha </th>
+                <th> Unidade de Medida </th>
+                <th> Dosagem Padrão </th>
+                <th> Registro ANVISA </th>
+                <th> Validade do Medicamento </th>
                 <th> # </th>
                 </tr>
                 </thead>
@@ -45,12 +47,14 @@ async function carregarLista() {
       var objeto = resposta.data[i];
 
       html += ` <tr>
-                <td> ${objeto.nome} </td>
-                <td> ${objeto.usuario}  </td>
-                <td> ${objeto.senha}  </td>
+                <td> ${objeto.nome_medicamento} </td>
+                <td> ${objeto.unidade_medida}  </td>
+                <td> ${objeto.dosagem_padrao}  </td>
+                <td> ${objeto.num_anvisa}  </td>
+                <td> ${objeto.validade_medicamento}  </td>
                 <td> 
-                    <a href="remedios/home/alterar.html?id=${objeto.id}"> Alterar</a>"
-                    <a href="#" onclick='excluir(${objeto.id})'> Excluir</a>"
+                    <a href="remedios/home/alterar.html?id=${objeto.id_medicamento}"> Alterar</a>"
+                    <a href="#" onclick='excluir(${objeto.id_medicamento})'> Excluir</a>"
                 </td>
                 </tr>
                 `;
