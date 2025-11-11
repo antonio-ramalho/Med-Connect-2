@@ -13,8 +13,8 @@ function inserirBotao() {
   document.getElementById("titulo").innerHTML += botao;
 }
 
-async function excluir_func(id) {
-  const retorno = await fetch("funcionarios/php/excluir.php?id=" + id);
+async function excluir_func(id_func) {
+  const retorno = await fetch("funcionarios/php/excluir.php?id_func=" + id_func);
   const resposta = await retorno.json();
 
   if (resposta.status == "ok") {
@@ -37,6 +37,10 @@ async function chamarIndex_func() {
                 <th> Nome </th>
                 <th> Usuario </th>
                 <th> Senha </th>
+                <th> CPF </th>
+                <th> Telefone </th>
+                <th> E-mail </th>
+                <th> Cargo </th>
                 <th></th>
                 </tr>
                 </thead>
@@ -47,13 +51,17 @@ async function chamarIndex_func() {
 
       html += ` <tr>
                 <td>
-                  <a href="#" onclick='excluir_func(${objeto.id})' class='botao-excluir'></a>
+                  <a href="#" onclick='excluir_func(${objeto.id_func})' class='botao-excluir'></a>
                 </td>
                 <td> ${objeto.nome} </td>
                 <td> ${objeto.usuario}  </td>
                 <td> ${objeto.senha}  </td>
+                <td> ${objeto.cpf} </td> 
+                <td> ${objeto.telefone} </td> 
+                <td> ${objeto.email} </td> 
+                <td> ${objeto.cargo} </td> 
                 <td> 
-                  <a href='funcionarios/home/alterar.html?id=${objeto.id}' class='botao-editar'></a>
+                  <a href='funcionarios/home/alterar.html?id_func=${objeto.id_func}' class='botao-editar'></a>
                 </td>
                 </tr>
                 `;

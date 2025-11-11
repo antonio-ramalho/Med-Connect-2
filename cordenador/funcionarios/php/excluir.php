@@ -2,10 +2,10 @@
 include_once("../../../conexao.php");
 
 // prepara a query para ser executada
-if(isset($_GET['id'])){
-    $id = $_GET['id'];
-    $stmt = $conexao->prepare("DELETE FROM funcionarios WHERE id = ?");
-    $stmt->bind_param("i",$id);
+if(isset($_GET['id_func'])){
+    $id_func = $_GET['id_func'];
+    $stmt = $conexao->prepare("DELETE FROM funcionarios WHERE id_func = ?");
+    $stmt->bind_param("i",$id_func);
     $stmt->execute();
 
     if($stmt -> affected_rows > 0) {

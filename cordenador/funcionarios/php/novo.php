@@ -12,10 +12,14 @@ $retorno = [
 $nome       = $_POST['nome'];
 $usuario    = $_POST['usuario'];
 $senha      = $_POST['senha'];
+$cpf        = $_POST['cpf'];
+$telefone   = $_POST['telefone'];
+$email      = $_POST['email'];
+$cargo      = $_POST['cargo'];
 
 // Preparar a query via statement para enviar ao banco
-$stmt = $conexao->prepare("INSERT INTO funcionarios(nome,usuario,senha) VALUES(?,?,?)");
-$stmt->bind_param("sss",$nome,$usuario,$senha);
+$stmt = $conexao->prepare("INSERT INTO funcionarios(nome,usuario,senha,cpf,telefone,email,cargo) VALUES(?,?,?,?,?,?,?)");
+$stmt->bind_param("sssssss",$nome, $usuario, $senha, $cpf, $telefone, $email, $cargo);
 $stmt->execute();
 
 if($stmt -> affected_rows > 0) {
