@@ -31,7 +31,7 @@ function carregarPagina(url) {
       conteudoPrincipal.innerHTML = html;
 
       if (url === "pacientes/home/index.html") {
-        chamarIndex();
+        chamarIndex_pac();
       }
     })
     .catch((error) => {

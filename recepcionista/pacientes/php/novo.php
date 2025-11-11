@@ -9,13 +9,24 @@ $retorno = [
 ];
 
 // Atribuição
-$nome       = $_POST['nome'];
-$usuario    = $_POST['usuario'];
-$senha      = $_POST['senha'];
+$nome           = $_POST['nome'];
+$cpf            = $_POST['cpf'];
+$telefone       = $_POST['telefone'];
+$data_nasc      = $_POST['data_nasc'];
+$idade          = $_POST['idade'];
+$sexo           = $_POST['sexo'];
+$email          = $_POST['email'];
+$logradouro     = $_POST['logradouro'];
+$numero_ende    = $_POST['numero_ende'];
+$cep            = $_POST['cep'];
+$cidade         = $_POST['cidade'];
+$estado         = $_POST['estado'];
+$complemento    = $_POST['complemento'];
+$bairo          = $_POST['bairro'];
 
 // Preparar a query via statement para enviar ao banco
-$stmt = $conexao->prepare("INSERT INTO funcionarios(nome,usuario,senha) VALUES(?,?,?)");
-$stmt->bind_param("sss",$nome,$usuario,$senha);
+$stmt = $conexao->prepare("INSERT INTO pacientes(nome,cpf,telefone,data_nasc,idade,sexo,email,logradouro,numero_ende,cep,cidade,estado,complemento,bairro) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+$stmt->bind_param("ssssisssisssss",$nome,$cpf,$telefone,$data_nasc,$idade,$sexo,$email,$logradouro,$numero_ende,$cep,$cidade,$estado,$complemento,$bairo);
 $stmt->execute();
 
 if($stmt -> affected_rows > 0) {

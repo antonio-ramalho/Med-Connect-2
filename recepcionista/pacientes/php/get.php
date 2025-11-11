@@ -2,12 +2,12 @@
 include_once("../../../conexao.php");
 
 // prepara a query para ser executada
-if(isset($_GET['id'])){
-    $id = $_GET['id'];
-    $stmt = $conexao->prepare("SELECT * FROM funcionarios WHERE id = ?");
-    $stmt->bind_param("i",$id);
+if(isset($_GET['id_paciente'])){
+    $id_paciente = $_GET['id_paciente'];
+    $stmt = $conexao->prepare("SELECT * FROM pacientes WHERE id_paciente = ?");
+    $stmt->bind_param("i",$id_paciente);
 }else{
-    $stmt = $conexao->prepare("SELECT * FROM funcionarios");
+    $stmt = $conexao->prepare("SELECT * FROM pacientes");
 }
 $stmt->execute();
 // pega o resultado da query executada e armazena na variável $resultado
