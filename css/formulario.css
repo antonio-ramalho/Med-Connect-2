@@ -1,36 +1,21 @@
 /* componentes dos formularios de cadastro */
 
-.modal-estilo {
-  background-color: var(--azul-escuro);
-  color: white;
-  border-radius: 20px;
-}
 
 .input-formulario-cadastro {
   border-radius: 20px;
-  background-color: rgba(107, 179, 242, 0.5);
   border: none;
-  height: 50px;
+  height: 40px;
 }
 
-.input-formulario-cadastro::placeholder {
+h1 {
+  text-align: center;
+}
+
+.formulario {
+  background-color: var(--azul-escuro);
+  padding: 10px 30px;
   color: white;
+  border-radius: 20px;
 }
 
-.botao-icone-sair {
-  font-size: 1.5em;
-  background: none;
-  border: none;
-  color: white;
-  padding: calc(var(--bs-modal-header-padding-y) * 0.5) calc(var(--bs-modal-header-padding-x) * 0.5);
-  margin: calc(-0.5 * var(--bs-modal-header-padding-y)) calc(-0.5 * var(--bs-modal-header-padding-x))
-    calc(-0.5 * var(--bs-modal-header-padding-y)) auto;
-}
 
-.input-com-icone {
-  background-image: url("../svg/search.svg");
-  background-repeat: no-repeat;
-  background-position: 10px center;
-  background-size: 20px 20px;
-  padding-left: 40px !important;
-}
