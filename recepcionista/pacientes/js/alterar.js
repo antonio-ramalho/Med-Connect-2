@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-async function fase1(id) {
-  const retorno = await fetch("../php/get.php?id=" + id);
+async function fase1(id_paciente) {
+  const retorno = await fetch("../php/get.php?id=" + id_paciente);
   const resposta = await retorno.json();
 
   if (resposta.status == "ok") {
@@ -35,7 +35,7 @@ async function fase1(id) {
     document.getElementById("estado").value = reg.estado;
     document.getElementById("complemento").value = reg.complemento;
     document.getElementById("bairro").value = reg.bairro;
-    document.getElementById("id_paciente").value = id;
+    document.getElementById("id_paciente").value = id_paciente;
   } else {
     alert("Erro " + resposta.mensagem);
   }
