@@ -16,8 +16,16 @@ thead tr th {
   border-radius: 20px;
 }
 
+.tabela-pacientes thead,.tabela-pacientes tr,.tabela-pacientes th{
+  padding: 5px;
+}
+
 tbody td {
   padding: 10px;
+}
+
+.tabela-pacientes tbody,.tabela-pacientes td {
+  padding: 5px;
 }
 
 table tbody tr:last-child td:last-child {

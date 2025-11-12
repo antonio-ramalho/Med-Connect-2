@@ -3,35 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projeto final novo</title>
+    <title>Novo Medicmento</title>
+
+    <link rel="stylesheet" href="../../../css/formulario.css">
+    <link rel="stylesheet" href="../../../css/global.css">
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
   </head>
   <body>
     <div style="padding: 2% 10%">
-      <h1>Novo registro</h1>
-      <form action="">
-        <div>
-          <label for="nome_medicamento">*Nome:</label>
-          <input type="text" placeholder="paracetamol" id="nome_medicamento" name="nome_medicamento" />
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-5">
+            <div class="formulario">
+              <h1>Novo Medicmento</h1>
+              <form action="">
+                <div>
+                  <label for="nome_medicamento">*Nome:</label>
+                  <input type="text" class="form-control input-formulario-cadastro" placeholder="paracetamol" id="nome_medicamento" name="nome_medicamento" />
+                </div>
+                <div>
+                  <label for="unidade">*Unidade de Medida:</label>
+                  <input type="text" class="form-control input-formulario-cadastro" placeholder="mg" id="unidade" name="unidade" />
+                </div>
+                <div>
+                  <label for="dosagem">*Dosagem Padrão:</label>
+                  <input type="number" class="form-control input-formulario-cadastro" id="dosagem" name="dosagem" />
+                </div>
+                <div>
+                  <label for="num_anvisa">*Número da Anvisa:</label>
+                  <input type="number" class="form-control input-formulario-cadastro" id="num_anvisa" name="num_anvisa" />
+                </div>
+                <div class="mb-2">
+                  <label for="validade">*Data de Validade:</label>
+                  <input type="date"class="form-control input-formulario-cadastro" id="validade" name="validade" />
+                </div>
+                <div class="d-flex justify-content-center gap-2">
+                  <button id="enviar" class="btn btn-success flex-fill" type="button">Enviar</button>
+                  <button id="sair" class="btn btn-danger flex-fill" type="button">Sair</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-        <div>
-          <label for="unidade">*Unidade de Medida:</label>
-          <input type="text" placeholder="mg" id="unidade" name="unidade" />
-        </div>
-        <div>
-          <label for="dosagem">*Dosagem Padrão:</label>
-          <input type="text" id="dosagem" name="dosagem" />
-        </div>
-        <div>
-          <label for="num_anvisa">*Número da Anvisa:</label>
-          <input type="text" id="num_anvisa" name="num_anvisa" />
-        </div>
-        <div>
-          <label for="validade">*Data de Validade:</label>
-          <input type="date" id="validade" name="validade" />
-        </div>
-      </form>
-      <button id="enviar" type="button">Enviar</button>
-      <button id="sair" type="button">Sair</button>
+      </div>
     </div>
     <script src="../js/novo.js"></script>
   </body>
