@@ -1,6 +1,6 @@
 function chamarIndex_funcionarios() {
   inserirBotao();
-  chamarIndex_func();
+  carregarListaFunc();
 
   document.getElementById("novo").addEventListener("click", () => {
     window.location.href = "funcionarios/home/novo.html";
@@ -25,7 +25,7 @@ async function excluir_func(id_func) {
   }
 }
 
-async function chamarIndex_func() {
+async function carregarListaFunc() {
   const retorno = await fetch("funcionarios/php/get.php");
   const resposta = await retorno.json();
 

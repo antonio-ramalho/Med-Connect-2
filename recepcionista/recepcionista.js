@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   valida_sessao();
   mostraNomeUsuario();
-  carregarPagina("pacientes/home/index.html");
+  carregarPagina("atendimento/home/index.html");
   selecionarPagina();
 
   document.getElementById("sair").addEventListener("click", () => {
@@ -30,7 +30,9 @@ function carregarPagina(url) {
     .then((html) => {
       conteudoPrincipal.innerHTML = html;
 
-      if (url === "pacientes/home/index.html") {
+      if (url === "atendimento/home/index.html") {
+        chamarIndex_atendimento();
+      } else if (url === "pacientes/home/index.html") {
         chamarIndex_pac();
       }
     })
@@ -54,7 +56,7 @@ function selecionarPagina() {
         carregarPagina(linkAtivoInicial.getAttribute("data-page"));
       } else {
         // Garante que a primeira página seja carregada (ajuste se a página inicial for outra)
-        const dashboardLink = document.querySelector('.sidebar a[data-page*="pacientes/home/index.html.html"]');
+        const dashboardLink = document.querySelector('.sidebar a[data-page*="atendimento/home/index.html.html"]');
         if (dashboardLink) {
           dashboardLink.classList.add("ativo");
           carregarPagina(dashboardLink.getAttribute("data-page"));

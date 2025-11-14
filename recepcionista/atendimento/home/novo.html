@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="padding: 2% 10%">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-5">
+            <div class="formulario">
+              <h1>Novo Paciente</h1>
+              <form action="">
+                <div>
+                  <label for="nome_pac">*Nome:</label>
+                  <div id="select_pac"></div>
+                </div>
+                <input type="hidden" id="id_paciente" />
+                <div id="dados_pac"></div>
+                <div id="form_atend"></div>
+                <div class="d-flex justify-content-center gap-2">
+                  <button id="enviar" class="btn btn-success flex-fill" type="button">Enviar</button>
+                  <button id="sair" class="btn btn-danger flex-fill" type="button">Sair</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/novo.js"></script>
+  </body>
+</html>

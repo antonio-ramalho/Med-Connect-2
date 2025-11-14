@@ -83,7 +83,7 @@ async function carregarLista_pac() {
     html += `</tbody>
              </table>`;
 
-    document.getElementById("lista").innerHTML = html;
+    document.getElementById("lista_pac").innerHTML = html;
   } else {
     alert("Erro!" + resposta.mensagem);
   }
