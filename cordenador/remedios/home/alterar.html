@@ -40,14 +40,14 @@
                   <input type="hidden" id="id_medicamento" />
                 </div>
                 <div>
-                  <label for="unidade">*Unidade de Medida:</label>
-                  <input
-                    type="text"
-                    class="form-control input-formulario-cadastro"
-                    placeholder="mg"
-                    id="unidade"
-                    name="unidade"
-                  />
+                  <label for="unidade">*Unidade de medida:</label>
+                  <select name="unidade" id="unidade" class="form-control input-formulario-cadastro">
+                    <option value="">↓ Selecione...</option>
+                    <option value="gramas (g)">gramas (g)</option>
+                    <option value="miligramas (mg)">miligramas (mg)</option>
+                    <option value="microgramas (mcg)">microgramas (mcg)</option>
+                    <option value="mililitros (mL)">mililitros (mL)</option>
+                  </select>
                 </div>
                 <div>
                   <label for="dosagem">*Dosagem Padrão:</label>
