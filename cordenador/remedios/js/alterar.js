@@ -14,12 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function fase1(id_medicamento) {
-  const retorno = await fetch("../php/get.php?id=" + id_medicamento);
+  console.log(id_medicamento);
+  const retorno = await fetch("../php/get.php?id_medicamento=" + id_medicamento);
   const resposta = await retorno.json();
 
   if (resposta.status == "ok") {
     alert("Sucesso " + resposta.mensagem);
     const reg = resposta.data[0];
+    console.log(reg.id_medicamento);
 
     document.getElementById("nome_medicamento").value = reg.nome_medicamento;
     document.getElementById("unidade").value = reg.unidade_medida;

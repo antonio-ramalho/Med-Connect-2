@@ -49,6 +49,14 @@ async function chamarIndex_func() {
     for (var i = 0; i < resposta.data.length; i++) {
       var objeto = resposta.data[i];
 
+      if (objeto.cargo == "CORD") {
+        var cargo_txt = "Cordenador";
+      } else if (objeto.cargo == "ENFE") {
+        var cargo_txt = "Enfermeiro";
+      } else if (objeto.cargo == "RECE") {
+        var cargo_txt = "Recepcionista";
+      }
+
       html += ` <tr>
                 <td>
                   <a href="#" onclick='excluir_func(${objeto.id_func})' class='botao-excluir'></a>
@@ -59,7 +67,7 @@ async function chamarIndex_func() {
                 <td> ${objeto.cpf} </td> 
                 <td> ${objeto.telefone} </td> 
                 <td> ${objeto.email} </td> 
-                <td> ${objeto.cargo} </td> 
+                <td> ${cargo_txt} </td> 
                 <td> 
                   <a href='funcionarios/home/alterar.html?id_func=${objeto.id_func}' class='botao-editar'></a>
                 </td>
