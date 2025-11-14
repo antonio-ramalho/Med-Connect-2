@@ -33,6 +33,7 @@ async function carregarLista_pac() {
     var html = `<table>
                 <thead>
                 <tr>
+                <th> </th>
                 <th> Nome </th>
                 <th> CPF </th>
                 <th> Telefone </th>
@@ -45,7 +46,6 @@ async function carregarLista_pac() {
                 <th> CEP </th>
                 <th> Cidade </th>
                 <th> Estado </th>
-                <th> Complemento </th>
                 <th> Bairro </th>
                 <th> # </th>
                 </tr>
@@ -71,7 +71,6 @@ async function carregarLista_pac() {
                 <td> ${objeto.cep}  </td>
                 <td> ${objeto.cidade}  </td>
                 <td> ${objeto.estado}  </td>
-                <td> ${objeto.complemento}  </td>
                 <td> ${objeto.bairro}  </td>
                 <td> 
                   <a href='pacientes/home/alterar.html?id=${objeto.id_paciente}' class='botao-editar'> </a>

@@ -17,10 +17,14 @@ async function carregarFila() {
     for (var i = 0; i < resposta.data.length; i++) {
       var objeto = resposta.data[i];
 
+      if (objeto.status_fila == 1) {
+        var status_fila_txt = "Esperando triagem";
+      }
+
       html += ` <tr>
                 <td> ${objeto.nome_pac} </td>
                 <td> ${objeto.cpf_pac} </td>
-                <td> ${objeto.status_fila} </td>
+                <td> ${status_fila_txt} </td>
                 <td> ${objeto.data_atendimento} </td>
                 </tr>
                 `;

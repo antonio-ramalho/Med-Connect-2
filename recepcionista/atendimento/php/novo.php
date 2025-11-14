@@ -22,13 +22,13 @@ $stmt->execute();
 if($stmt -> affected_rows > 0) {
         $retorno = [
             "status"   => "ok",
-            "mensagem" => $stmt->affected_rows." Registros modificados.",
+            "mensagem" => $stmt->affected_rows." Atendimento Registrado.",
             "data"     => []
         ];
     } else {
         $retorno = [
             "status"   => "nok",
-            "mensagem" => "0 registros modificados.",
+            "mensagem" => "Atendimento não registrado.",
             "data"     => []
         ];
     }
