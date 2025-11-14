@@ -34,6 +34,8 @@ function carregarPagina(url) {
         chamarIndex_atendimento();
       } else if (url === "pacientes/home/index.html") {
         chamarIndex_pac();
+      } else if (url === "fila/index.html") {
+        carregarFila();
       }
     })
     .catch((error) => {

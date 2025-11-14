@@ -12,10 +12,11 @@ $retorno = [
 $motivo_consul    = $_POST['motivo_consul'];
 $anamnese_rec     = $_POST['anamnese_rec'];
 $id_paciente      = $_GET['id'];
+$status_fila      = 1;
 
 // Preparar a query via statement para enviar ao banco
-$stmt = $conexao->prepare("INSERT INTO atendimento(paciente_id, motivo_consul, anamnese_inicial, data_atendimento) VALUES(?,?,?, NOW())");
-$stmt->bind_param("iss",$id_paciente,$motivo_consul,$anamnese_rec);
+$stmt = $conexao->prepare("INSERT INTO atendimento(paciente_id, motivo_consul, anamnese_inicial, status_fila, data_atendimento) VALUES(?,?,?,?, NOW())");
+$stmt->bind_param("issi",$id_paciente,$motivo_consul,$anamnese_rec, $status_fila);
 $stmt->execute();
 
 if($stmt -> affected_rows > 0) {
