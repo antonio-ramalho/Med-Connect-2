@@ -45,7 +45,7 @@ async function escolher_pac() {
   const resposta = await retorno.json();
 
   if (resposta.status == "ok") {
-    var html = `<select name="paciente" id="nome_pac" onchange='carregar_pac_atend(this)'>
+    var html = `<select name="paciente" id="nome_pac" onchange='carregar_pac_atend(this)' class='input-formulario-cadastro'>
                   <option value="">Escolha um paciente:</option>
                 `;
 
@@ -62,14 +62,14 @@ async function escolher_pac() {
 }
 
 function inputs_anamnese() {
-  html = `<div>
+  html = `<div class='box-txt' >
             <label for="motivo_consul">*Motivo da consulta:</label>
-            <textarea id="motivo_consul" name="motivo_consul" rows="5" cols="30"></textarea>
+            <textarea id="motivo_consul" name="motivo_consul" rows="5" cols="30" class='text-area'></textarea>
           </div>`;
 
-  html += `<div>
+  html += `<div class='box-txt'>
               <label for="anamnese_rec">*Descreva o que o paciente sente:</label>
-              <textarea id="anamnese_rec" name="anamnese_rec" rows="5" cols="30"></textarea>
+              <textarea id="anamnese_rec" name="anamnese_rec" rows="5" cols="30" class='text-area'></textarea>
             </div>`;
 
   document.getElementById("form_atend").innerHTML = html;
@@ -86,19 +86,19 @@ function carregar_pac_atend(elementoSelecionado) {
 
   html_pac = `<div>
                 <label for="cpf">Cpf do paciente:</label>
-                <input type="text" id="cpf" name="cpf" value="${cpf}" disabled>
+                <input type="text" id="cpf" name="cpf" value="${cpf}" class='input-formulario-cadastro' disabled>
               </div>
               `;
 
   html_pac += `<div>
                 <label for="sexo">Sexo do paciente:</label>
-                <input type="text" id="sexo" name="sexo" value="${sexo}" disabled>
+                <input type="text" id="sexo" name="sexo" value="${sexo}" class='input-formulario-cadastro' disabled>
                </div>
               `;
 
   html_pac += `<div>
                 <label for="idade">Idade do paciente:</label>
-                <input type="text" id="idade" name="idade" value="${idade}" disabled>
+                <input type="text" id="idade" name="idade" value="${idade}" class='input-formulario-cadastro' disabled>
               </div>
               `;
 

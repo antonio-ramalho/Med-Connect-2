@@ -8,24 +8,22 @@ table {
   border-radius: 20px;
 }
 
-thead tr th {
+table thead {
+  height: 50px;
+  text-align: center;
+}
+
+table thead tr th {
   background-color: var(--azul-escuro);
-  font-weight: bold;
-  padding: 10px;
-  text-align: left;
   border-radius: 20px;
 }
 
-.tabela-pacientes thead,.tabela-pacientes tr,.tabela-pacientes th{
-  padding: 5px;
+table tbody tr {
+  text-align: center;
 }
 
-tbody td {
-  padding: 10px;
-}
-
-.tabela-pacientes tbody,.tabela-pacientes td {
-  padding: 5px;
+table tbody tr td {
+  padding: 15px;
 }
 
 table tbody tr:last-child td:last-child {

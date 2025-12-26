@@ -1,6 +1,5 @@
 /* componentes dos formularios de cadastro */
 
-
 .input-formulario-cadastro {
   border-radius: 20px;
   border: none;
@@ -11,11 +10,18 @@ h1 {
   text-align: center;
 }
 
+.box-txt {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-area {
+  border-radius: 20px;
+}
+
 .formulario {
   background-color: var(--azul-escuro);
   padding: 10px 30px;
   color: white;
   border-radius: 20px;
 }
-
-

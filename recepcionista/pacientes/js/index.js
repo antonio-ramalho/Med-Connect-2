@@ -9,8 +9,8 @@ function chamarIndex_pac() {
 
 function inserirBotao() {
   var botao = "";
-  botao = "<button id='novo' class='botao-cadastro mb-4'> Novo registro </button>";
-  document.getElementById("titulo").innerHTML += botao;
+  botao = "<button id='novo' class='botao-cadastro'> Novo registro </button>";
+  document.getElementById("controles_tabela").innerHTML += botao;
 }
 
 async function excluir_pac(id) {
@@ -41,12 +41,6 @@ async function carregarLista_pac() {
                 <th> Idade </th>
                 <th> Sexo </th>
                 <th> Email </th>
-                <th> Logradouro </th>
-                <th> Número de endereço </th>
-                <th> CEP </th>
-                <th> Cidade </th>
-                <th> Estado </th>
-                <th> Bairro </th>
                 <th> # </th>
                 </tr>
                 </thead>
@@ -66,12 +60,6 @@ async function carregarLista_pac() {
                 <td> ${objeto.idade}  </td>
                 <td> ${objeto.sexo}  </td>
                 <td> ${objeto.email}  </td>
-                <td> ${objeto.logradouro}  </td>
-                <td> ${objeto.numero_ende}  </td>
-                <td> ${objeto.cep}  </td>
-                <td> ${objeto.cidade}  </td>
-                <td> ${objeto.estado}  </td>
-                <td> ${objeto.bairro}  </td>
                 <td> 
                   <a href='pacientes/home/alterar.html?id=${objeto.id_paciente}' class='botao-editar'> </a>
                 </td>

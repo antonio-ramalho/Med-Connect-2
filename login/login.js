@@ -27,6 +27,8 @@ async function verificarLogin() {
       window.location.href = "../cordenador/cordenador.html";
     } else if (resposta.data == "RECE") {
       window.location.href = "../recepcionista/recepcionista.html";
+    } else if (resposta.data == "ENFE") {
+      window.location.href = "../enfermeiro/enfermeiro.html";
     } else {
       alert("cargo não existe!");
     }

@@ -9,8 +9,8 @@ function chamarIndex_atendimento() {
 
 function inserirBotao() {
   var botao = "";
-  botao = "<button id='btn-cadastro-filtro' class='botao-cadastro mb-4'> Novo atendimento </button>";
-  document.getElementById("titulo").innerHTML += botao;
+  botao = "<button id='btn-cadastro-filtro' class='botao-cadastro'> Novo atendimento </button>";
+  document.getElementById("controles_tabela").innerHTML += botao;
 }
 
 async function carregarLista_pac_atend() {
@@ -27,14 +27,6 @@ async function carregarLista_pac_atend() {
                 <th> Data de nascimento </th>
                 <th> Idade </th>
                 <th> Sexo </th>
-                <th> Email </th>
-                <th> Logradouro </th>
-                <th> Número de endereço </th>
-                <th> CEP </th>
-                <th> Cidade </th>
-                <th> Estado </th>
-                <th> Complemento </th>
-                <th> Bairro </th>
                 </tr>
                 </thead>
                 <tbody>`;
@@ -49,14 +41,6 @@ async function carregarLista_pac_atend() {
                 <td> ${objeto.data_nasc}  </td>
                 <td> ${objeto.idade}  </td>
                 <td> ${objeto.sexo}  </td>
-                <td> ${objeto.email}  </td>
-                <td> ${objeto.logradouro}  </td>
-                <td> ${objeto.numero_ende}  </td>
-                <td> ${objeto.cep}  </td>
-                <td> ${objeto.cidade}  </td>
-                <td> ${objeto.estado}  </td>
-                <td> ${objeto.complemento}  </td>
-                <td> ${objeto.bairro}  </td>
                 </tr>
                 `;
     }
