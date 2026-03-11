@@ -105,7 +105,7 @@ CREATE TABLE `funcionarios` (
 --
 
 INSERT INTO `funcionarios` (`nome`, `usuario`, `cpf`, `senha`, `email`, `telefone`, `cargo`, `id_func`) VALUES
-('Antonio Ramalho', 'antonio', '11174448997', '12345', 'antoninho.ferreira2015@gmail.com', '42984273174', 'CORD', 4);
+('José das couves', 'José', '12345678900', '12345', 'jose.couves@gmail.com', '42999999999', 'CORD', 4);
 
 -- --------------------------------------------------------
 
@@ -161,7 +161,7 @@ CREATE TABLE `pacientes` (
 
 INSERT INTO `pacientes` (`id_paciente`, `nome`, `cpf`, `telefone`, `data_nasc`, `idade`, `sexo`, `email`, `logradouro`, `numero_ende`, `cep`, `cidade`, `estado`, `complemento`, `bairro`) VALUES
 (4, 'João das couves', '12345678900', '4280000000', '2007-02-10', 18, 'm', 'paciente@gmail.com', 'Rua das flores', 120, '85195000', 'Curitiba', 'PR', 'Casa', 'centro'),
-(5, 'ANTONIO FERREIRA RAMALHO', '11174448997', '42984273174', '2007-02-01', 18, 'M', 'antoninho.ferreira2015@gmail.com', 'Rua joão josé ribeiro', 1394, '85195000', 'Reserva do Iguaçu', 'PR', 'Casa', 'centro');
+(5, 'Predo rosa', '12345678900', '42999999999', '2007-02-01', 18, 'M', 'jose.couves@gmail.com', 'Rua das flores', 4567, '00000000', 'Curitiba', 'PR', 'Casa', 'centro');
 
 --
 -- Índices para tabelas despejadas
