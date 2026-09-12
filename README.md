@@ -9,5 +9,5 @@ A arquitetura do projeto foi desenhada de forma direta, focada em múltiplas ope
 * **Controle de Versão:** Git/GitHub.
 * **Design:** Figma.
 
-![Imagem do Sistema](med_connect.jpeg)
+![Imagem do Sistema](/med_connect.jpeg)
 
