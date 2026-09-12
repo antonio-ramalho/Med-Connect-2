@@ -8,9 +8,3 @@ A arquitetura do projeto foi desenhada de forma direta, focada em múltiplas ope
 * **Linguagens:** PHP, JavaScript, HTML5, CSS3.
 * **Controle de Versão:** Git/GitHub.
 * **Design:** Figma.
-
-## 👨‍💻 Meu Papel no Projeto
-Trabalhando em equipe, este projeto foi um marco fundamental para o meu aprendizado prático em desenvolvimento de software e trabalho colaborativo. Minhas responsabilidades incluíram:
-* **Levantamento de Requisitos:** Entendimento das necessidades do fluxo hospitalar para tradução em regras de negócio.
-* **Prototipagem:** Criação do primeiro design e das telas do sistema através do Figma.
-* **Coordenação e Versionamento:** Organização da equipe de desenvolvimento e gestão do código base através do Git.
