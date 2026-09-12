@@ -8,3 +8,6 @@ A arquitetura do projeto foi desenhada de forma direta, focada em múltiplas ope
 * **Linguagens:** PHP, JavaScript, HTML5, CSS3.
 * **Controle de Versão:** Git/GitHub.
 * **Design:** Figma.
+
+![Imagem do Sistema](med_connect.jpeg)
+
